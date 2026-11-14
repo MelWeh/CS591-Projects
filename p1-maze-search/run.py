@@ -21,7 +21,8 @@ def report(name, label, maze, problem, path, stats):
     print(f"Nodes expanded: {stats['expanded']}")
     print(f"Max depth:      {stats['max_depth']}")
     print(f"Max fringe:     {stats['max_fringe']}")
-    out = RESULTS / f"{name}_{label.replace(' ', '_')}.txt"
+    safe = label.replace("*", "star").replace(" ", "_")
+    out = RESULTS / f"{name}_{safe}.txt"
     out.write_text(picture + "\n")
 
 
